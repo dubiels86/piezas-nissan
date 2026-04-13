@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piezas Nissan — LD20 · TD27 · KA24DE · FE6 · FD35</title>
+  <meta name="description" content="Venta de piezas de motores Nissan LD20, LD20II, TD23, TD27, KA24DE, FE6, FD35 y camioneta Nissan. Disponible en La Habana. Precios negociables según cantidad.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            title: ['Instrument Serif', 'serif'],
+          },
+          colors: {
+            surface: { DEFAULT: '#0C0C0C', alt: '#050505', card: '#111111', hover: '#1A1A1A' },
+            accent: { DEFAULT: '#C7A368', hover: '#e0b979', dim: 'rgba(199,163,104,0.1)' },
+            border: { DEFAULT: 'rgba(255,255,255,0.08)', light: 'rgba(255,255,255,0.12)', accent: 'rgba(199,163,104,0.3)' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <style>
+    body { background: #0C0C0C; color: #ffffff; }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0C0C0C; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #C7A368; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(1deg); }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(199,163,104,0.3); }
+      50% { box-shadow: 0 0 40px rgba(199,163,104,0.6); }
+    }
+    .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+    @keyframes slide-in-left {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .part-card {
+      background: #111111;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .part-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #C7A368, transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .part-card:hover {
+      border-color: rgba(199,163,104,0.3);
+      background: #1A1A1A;
+      transform: translateY(-2px);
+    }
+    .part-card:hover::before { opacity: 1; }
+
+    .filter-btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: transparent;
+      color: #a3a3a3;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn:hover {
+      border-color: rgba(199,163,104,0.4);
+      color: #C7A368;
+    }
+    .filter-btn.active {
+      background: #C7A368;
+      border-color: #C7A368;
+      color: #0C0C0C;
+      font-weight: 600;
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37,211,102,0.6);
+    }
+
+    .engine-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: 'Manrope', sans-serif;
+    }
+    .badge-diesel { background: rgba(234,179,8,0.12); color: #eab308; }
+    .badge-gasolina { background: rgba(59,130,246,0.12); color: #3b82f6; }
+    .badge-pickup { background: rgba(168,85,247,0.12); color: #a855f7; }
+
+    .stat-number {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.5rem;
+      color: #C7A368;
+      line-height: 1;
+    }
+
+    .search-input {
+      background: #111111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 0.85rem 1rem 0.85rem 3rem;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      width: 100%;
+      transition: all 0.25s ease;
+      outline: none;
+    }
+    .search-input::placeholder { color: #525252; }
+    .search-input:focus {
+      border-color: rgba(199,163,104,0.4);
+      box-shadow: 0 0 0 3px rgba(199,163,104,0.08);
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(199,163,104,0.3), transparent);
+    }
+
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .mobile-menu.open { max-height: 400px; }
+
+    .toast {
+      position: fixed;
+      bottom: 6rem;
+      right: 2rem;
+      z-index: 1001;
+      background: #111;
+      border: 1px solid rgba(199,163,104,0.3);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      color: #fff;
+      font-size: 0.85rem;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s ease;
+      pointer-events: none;
+      max-width: 300px;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .parts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    @media (min-width: 1024px) {
+      .parts-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .parts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background:rgba(12,12,12,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.05);">
+    <div class="max-w-[1400px] mx-auto px-6 flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
+          <iconify-icon icon="mdi:engine" style="color:#0C0C0C;font-size:20px;"></iconify-icon>
+        </div>
+        <div>
+          <span class="font-display font-bold text-sm tracking-wide text-white">NISSAN PARTS</span>
+          <span class="hidden sm:inline text-xs text-neutral-500 ml-2">La Habana</span>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#motores" class="text-xs uppercase tracking-widest text-neutral-400 hover:text-accent transition-colors duration-200">Motores</a>
+        <a href="#catalogo" class="text-xs uppercase tracking-widest text-neutral-400 hover:text-accent transition-colors duration-200">Catálogo</a>
+        <a href="#pickup" class="text-xs uppercase tracking-widest text-neutral-400 hover:text-accent transition-colors duration-200">Camioneta</a>
+        <a href="#contacto" class="text-xs uppercase tracking-widest text-neutral-400 hover:text-accent transition-colors duration-200">Contacto</a>
+      </div>
+
+      <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20información%20sobre%20piezas%20Nissan" target="_blank" class="hidden md:flex items-center gap-2 bg-accent hover:bg-accent-hover text-surface font-semibold text-xs uppercase tracking-wider px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-105">
+        <iconify-icon icon="mdi:whatsapp" style="font-size:16px;"></iconify-icon>
+        Pedir Piezas
+      </a>
+
+      <button id="burger" class="md:hidden text-white p-2" aria-label="Menú">
+        <iconify-icon icon="mdi:menu" style="font-size:24px;" id="burger-icon"></iconify-icon>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu md:hidden" style="background:rgba(12,12,12,0.95);backdrop-filter:blur(12px);">
+      <div class="px-6 py-4 flex flex-col gap-4 border-t border-border">
+        <a href="#motores" class="text-sm text-neutral-300 hover:text-accent transition-colors" onclick="closeMobile()">Motores</a>
+        <a href="#catalogo" class="text-sm text-neutral-300 hover:text-accent transition-colors" onclick="closeMobile()">Catálogo</a>
+        <a href="#pickup" class="text-sm text-neutral-300 hover:text-accent transition-colors" onclick="closeMobile()">Camioneta</a>
+        <a href="#contacto" class="text-sm text-neutral-300 hover:text-accent transition-colors" onclick="closeMobile()">Contacto</a>
+        <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20información%20sobre%20piezas%20Nissan" target="_blank" class="flex items-center justify-center gap-2 bg-accent text-surface font-semibold text-sm px-5 py-3 rounded-lg mt-2">
+          <iconify-icon icon="mdi:whatsapp" style="font-size:18px;"></iconify-icon>
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============ HERO ============ -->
+  <section class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-16">
+    <div class="absolute inset-0">
+      <img src="https://picsum.photos/seed/nissan-engine-dark/1920/1080.jpg" alt="" class="w-full h-full object-cover opacity-20" style="filter:grayscale(100%) contrast(1.1);">
+      <div class="absolute inset-0" style="background:linear-gradient(to top, #0C0C0C 5%, rgba(12,12,12,0.7) 40%, rgba(12,12,12,0.85) 100%);"></div>
+    </div>
+
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 animate-float" style="background:radial-gradient(circle, #C7A368, transparent 70%);filter:blur(80px);"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-72 h-72 rounded-full opacity-5" style="background:radial-gradient(circle, #C7A368, transparent 70%);filter:blur(60px);animation:float 8s ease-in-out infinite reverse;"></div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 text-center">
+      <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border mb-8">
+        <span class="w-2 h-2 rounded-full bg-accent pulse-glow"></span>
+        <span class="text-xs font-medium tracking-widest uppercase text-neutral-400">Stock Disponible — La Habana</span>
+      </div>
+
+      <h1 class="reveal reveal-delay-1 font-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.05] tracking-tight mb-6">
+        Piezas de Motores<br>
+        <span class="text-accent">Nissan</span>
+      </h1>
+
+      <p class="reveal reveal-delay-2 font-serif italic text-xl sm:text-2xl md:text-3xl text-neutral-400 mb-4">
+        LD20 · LD20II · TD23 · TD27 · KA24DE · FE6 · FD35
+      </p>
+      <p class="reveal reveal-delay-3 text-neutral-500 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+        Repuestos originales y de alta calidad para motores diésel y gasolina Nissan. 
+        <span class="text-neutral-300 font-normal">Precios negociables dependiendo de las cantidades.</span>
+      </p>
+
+      <div class="reveal reveal-delay-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#catalogo" class="group flex items-center gap-3 bg-accent hover:bg-accent-hover text-surface font-display font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-accent/20">
+          <iconify-icon icon="mdi:format-list-bulleted" style="font-size:18px;"></iconify-icon>
+          Ver Catálogo Completo
+          <iconify-icon icon="mdi:arrow-down" style="font-size:16px;" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
+        </a>
+        <a href="https://wa.me/5352643984?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20piezas%20Nissan" target="_blank" class="flex items-center gap-3 border border-border-light hover:border-accent/40 text-white font-display font-semibold text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200 hover:bg-white/5">
+          <iconify-icon icon="mdi:whatsapp" style="font-size:20px;color:#25D366;"></iconify-icon>
+          Consultar por WhatsApp
+        </a>
+      </div>
+
+      <!-- Stats — solo 2 columnas -->
+      <div class="reveal mt-16 grid grid-cols-2 gap-6 max-w-sm mx-auto">
+        <div class="text-center">
+          <div class="stat-number" data-target="42">0</div>
+          <div class="text-xs text-neutral-500 uppercase tracking-wider mt-1">Piezas</div>
+        </div>
+        <div class="text-center">
+          <div class="stat-number" data-target="9">0</div>
+          <div class="text-xs text-neutral-500 uppercase tracking-wider mt-1">Motores</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      <span class="text-[10px] uppercase tracking-[0.2em] text-neutral-500">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-neutral-500 to-transparent"></div>
+    </div>
+  </section>
+
+
+  <!-- ============ ENGINES SHOWCASE ============ -->
+  <section id="motores" class="relative py-24 md:py-32">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <span class="text-xs font-medium tracking-[0.2em] uppercase text-accent">Motores Disponibles</span>
+        <h2 class="font-title text-3xl sm:text-4xl md:text-5xl mt-4 mb-6 tracking-tight">
+          Encontrá tu <span class="italic text-accent">motor</span>
+        </h2>
+        <p class="text-neutral-400 max-w-xl mx-auto font-light">
+          Trabajamos con las líneas de motores más demandadas de Nissan. Seleccioná tu motor para ver las piezas disponibles.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <button onclick="filterParts('TD27')" class="reveal group bg-surface-card border border-border hover:border-accent/30 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-surface-hover hover:-translate-y-1 cursor-pointer">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:bg-yellow-500/20 transition-colors">
+            <iconify-icon icon="mdi:engine" style="font-size:24px;color:#eab308;"></iconify-icon>
+          </div>
+          <div class="font-display font-bold text-lg text-white">TD27</div>
+          <span class="engine-badge badge-diesel mt-2">Diésel</span>
+        </button>
+
+        <button onclick="filterParts('TD23')" class="reveal reveal-delay-1 group bg-surface-card border border-border hover:border-accent/30 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-surface-hover hover:-translate-y-1 cursor-pointer">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:bg-yellow-500/20 transition-colors">
+            <iconify-icon icon="mdi:engine" style="font-size:24px;color:#eab308;"></iconify-icon>
+          </div>
+          <div class="font-display font-bold text-lg text-white">TD23</div>
+          <span class="engine-badge badge-diesel mt-2">Diésel</span>
+        </button>
+
+        <button onclick="filterParts('LD20II')" class="reveal reveal-delay-1 group bg-surface-card border border-border hover:border-accent/30 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-surface-hover hover:-translate-y-1 cursor-pointer">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:bg-yellow-500/20 transition-colors">
+            <iconify-icon icon="mdi:engine" style="font-size:24px;color:#eab308;"></iconify-icon>
+          </div>
+          <div class="font-display font-bold text-lg text-white">LD20 II</div>
+          <span class="engine-badge badge-diesel mt-2">Diésel</span>
+        </button>
+
+        <button onclick="filterParts('LD20')" class="reveal reveal-delay-2 group bg-surface-card border border-border hover:border-accent/30 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-surface-hover hover:-translate-y-1 cursor-pointer">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:bg-yellow-500/20 transition-colors">
+            <iconify-icon icon="mdi:engine" style="font-size:24px;color:#eab308;"></iconify-icon>
+          </div>
+          <div class="font-display font-bold text-lg text-white">LD20</div>
+          <span class="engine-badge badge-diesel mt-2">Diésel</span>
+        </button>
+
+        <button onclick="filterParts('KA24DE')" class="reveal reveal-delay-2 group bg-surface-card border border-border hover:border-accent/30 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-surface-hover hover:-translate-y-1 cursor-pointer">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
+            <iconify-icon icon="mdi:engine" style="font-size:24px;color:#3b82f6;"></iconify-icon>
+          </div>
+          <div class="font-display font-bold text-lg text-white">KA24DE</div>
+          <span class="engine-badge badge-gasolina mt-2">Gasolina</span>
+        </button>
+
+        <button onclick="filterParts('FE6')" class="reveal reveal-delay-3 group bg-surface-card border border-border hover:border-accent/30 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-surface-hover hover:-translate-y-1 cursor-pointer">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:bg-yellow-500/20 transition-colors">
+            <iconify-icon icon="mdi:engine" style="font-size:24px;color:#eab308;"></iconify-icon>
+          </div>
+          <div class="font-display font-bold text-lg text-white">FE6</div>
+          <span class="engine-badge badge-diesel mt-2">Diésel</span>
+        </button>
+
+        <button onclick="filterParts('FD35')" class="reveal reveal-delay-3 group bg-surface-card border border-border hover:border-accent/30 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-surface-hover hover:-translate-y-1 cursor-pointer">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:bg-yellow-500/20 transition-colors">
+            <iconify-icon icon="mdi:engine" style="font-size:24px;color:#eab308;"></iconify-icon>
+          </div>
+          <div class="font-display font-bold text-lg text-white">FD35</div>
+          <span class="engine-badge badge-diesel mt-2">Diésel</span>
+        </button>
+
+        <button onclick="filterParts('QD32')" class="reveal reveal-delay-4 group bg-surface-card border border-border hover:border-accent/30 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-surface-hover hover:-translate-y-1 cursor-pointer">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:bg-yellow-500/20 transition-colors">
+            <iconify-icon icon="mdi:engine" style="font-size:24px;color:#eab308;"></iconify-icon>
+          </div>
+          <div class="font-display font-bold text-lg text-white">QD32</div>
+          <span class="engine-badge badge-diesel mt-2">Diésel</span>
+        </button>
+
+        <button onclick="filterParts('ED33')" class="reveal reveal-delay-4 group bg-surface-card border border-border hover:border-accent/30 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-surface-hover hover:-translate-y-1 cursor-pointer">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:bg-yellow-500/20 transition-colors">
+            <iconify-icon icon="mdi:engine" style="font-size:24px;color:#eab308;"></iconify-icon>
+          </div>
+          <div class="font-display font-bold text-lg text-white">ED33</div>
+          <span class="engine-badge badge-diesel mt-2">Diésel</span>
+        </button>
+
+        <button onclick="filterParts('PICKUP')" class="reveal reveal-delay-4 group bg-surface-card border border-border hover:border-accent/30 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-surface-hover hover:-translate-y-1 cursor-pointer">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-purple-500/10 flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
+            <iconify-icon icon="mdi:car-pickup" style="font-size:24px;color:#a855f7;"></iconify-icon>
+          </div>
+          <div class="font-display font-bold text-lg text-white">Pickup</div>
+          <span class="engine-badge badge-pickup mt-2">Chasis</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+
+  <!-- ============ FULL CATALOG ============ -->
+  <section id="catalogo" class="relative py-24 md:py-32">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <div class="reveal text-center mb-12">
+        <span class="text-xs font-medium tracking-[0.2em] uppercase text-accent">Inventario Actual</span>
+        <h2 class="font-title text-3xl sm:text-4xl md:text-5xl mt-4 mb-6 tracking-tight">
+          Catálogo de <span class="italic text-accent">Piezas</span>
+        </h2>
+        <p class="text-neutral-400 max-w-xl mx-auto font-light">
+          Todos los precios son en USD. <span class="text-neutral-300 font-normal">Negociables según cantidad.</span>
+        </p>
+      </div>
+
+      <div class="reveal mb-8 flex flex-col md:flex-row gap-4 items-center">
+        <div class="relative w-full md:w-80">
+          <iconify-icon icon="mdi:magnify" style="font-size:18px;color:#525252;position:absolute;left:1rem;top:50%;transform:translateY(-50%);"></iconify-icon>
+          <input type="text" id="searchInput" class="search-input" placeholder="Buscar pieza..." oninput="searchParts()">
+        </div>
+        <div class="flex flex-wrap gap-2 justify-center" id="filterContainer">
+          <button class="filter-btn active" onclick="filterParts('ALL')">Todos</button>
+          <button class="filter-btn" onclick="filterParts('TD27')">TD27</button>
+          <button class="filter-btn" onclick="filterParts('TD23')">TD23</button>
+          <button class="filter-btn" onclick="filterParts('LD20II')">LD20II</button>
+          <button class="filter-btn" onclick="filterParts('LD20')">LD20</button>
+          <button class="filter-btn" onclick="filterParts('KA24DE')">KA24DE</button>
+          <button class="filter-btn" onclick="filterParts('FE6')">FE6</button>
+          <button class="filter-btn" onclick="filterParts('FD35')">FD35</button>
+          <button class="filter-btn" onclick="filterParts('QD32')">QD32</button>
+          <button class="filter-btn" onclick="filterParts('ED33')">ED33</button>
+          <button class="filter-btn" onclick="filterParts('PICKUP')">Pickup</button>
+        </div>
+      </div>
+
+      <div class="mb-6 flex items-center justify-between">
+        <p class="text-sm text-neutral-500" id="resultCount">Mostrando 42 piezas</p>
+        <a href="https://wa.me/5352643984?text=Hola%2C%20quiero%20ver%20el%20listado%20completo%20de%20precios" target="_blank" class="text-xs text-accent hover:text-accent-hover transition-colors flex items-center gap-1">
+          <iconify-icon icon="mdi:download" style="font-size:14px;"></iconify-icon>
+          Pedir lista completa
+        </a>
+      </div>
+
+      <div class="parts-grid" id="partsGrid"></div>
+
+      <div id="emptyState" class="hidden text-center py-20">
+        <iconify-icon icon="mdi:engine-off" style="font-size:48px;color:#333;"></iconify-icon>
+        <p class="text-neutral-500 mt-4 text-lg">No se encontraron piezas con ese filtro.</p>
+        <button onclick="filterParts('ALL')" class="mt-4 text-accent text-sm hover:underline">Mostrar todas las piezas</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+
+  <!-- ============ PICKUP SECTION ============ -->
+  <section id="pickup" class="relative py-24 md:py-32 overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full opacity-5" style="background:radial-gradient(ellipse at 80% 50%, #a855f7, transparent 70%);"></div>
+
+    <div class="relative max-w-[1400px] mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal relative rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="https://picsum.photos/seed/nissan-pickup-truck-offroad/800/600.jpg" alt="Nissan Pickup" class="w-full h-full object-cover" style="filter:grayscale(80%) contrast(1.1);">
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="engine-badge badge-pickup text-xs">Chasis & Suspensión</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="reveal">
+            <span class="text-xs font-medium tracking-[0.2em] uppercase text-accent">Nissan Pickup</span>
+            <h2 class="font-title text-3xl sm:text-4xl md:text-5xl mt-4 mb-6 tracking-tight">
+              Piezas de <span class="italic text-accent">Camioneta</span>
+            </h2>
+            <p class="text-neutral-400 font-light leading-relaxed mb-8">
+              Faroles, suspension, frenos, transmisión y más. Todo lo que tu Nissan Pickup necesita para volver a la carretera.
+            </p>
+          </div>
+
+          <div class="space-y-3 reveal reveal-delay-1">
+            <div class="flex items-center justify-between p-3 rounded-lg bg-surface-card border border-border hover:border-border-accent transition-colors">
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="mdi:car-light-high" style="font-size:18px;color:#a855f7;"></iconify-icon>
+                <span class="text-sm text-neutral-300">Farol Derecho / Izquierdo</span>
+              </div>
+              <span class="text-accent font-display font-bold text-sm">$40.00</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-surface-card border border-border hover:border-border-accent transition-colors">
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="mdi:car-exhaust" style="font-size:18px;color:#a855f7;"></iconify-icon>
+                <span class="text-sm text-neutral-300">Tubo Escape Completo (Final)</span>
+              </div>
+              <span class="text-accent font-display font-bold text-sm">$145.50</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-surface-card border border-border hover:border-border-accent transition-colors">
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="mdi:car-shift-pattern" style="font-size:18px;color:#a855f7;"></iconify-icon>
+                <span class="text-sm text-neutral-300">Barra de Transmisión</span>
+              </div>
+              <span class="text-accent font-display font-bold text-sm">$400.00</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-surface-card border border-border hover:border-border-accent transition-colors">
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="mdi:car-brake-abs" style="font-size:18px;color:#a855f7;"></iconify-icon>
+                <span class="text-sm text-neutral-300">Tambora Frenos Trasera</span>
+              </div>
+              <span class="text-accent font-display font-bold text-sm">$25.00</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-surface-card border border-border hover:border-border-accent transition-colors">
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="mdi:car-tire-alert" style="font-size:18px;color:#a855f7;"></iconify-icon>
+                <span class="text-sm text-neutral-300">Cubo Rueda Delantero c/ROD</span>
+              </div>
+              <span class="text-accent font-display font-bold text-sm">$40.00</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-surface-card border border-border hover:border-border-accent transition-colors">
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="mdi:arm-flex" style="font-size:18px;color:#a855f7;"></iconify-icon>
+                <span class="text-sm text-neutral-300">Brazo Suspensión (×4)</span>
+              </div>
+              <span class="text-accent font-display font-bold text-sm">$38.00 c/u</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-surface-card border border-border hover:border-border-accent transition-colors">
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="mdi:circle-slice-5" style="font-size:18px;color:#a855f7;"></iconify-icon>
+                <span class="text-sm text-neutral-300">Banda Freno Trasera</span>
+              </div>
+              <span class="text-accent font-display font-bold text-sm">$38.00</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-surface-card border border-border hover:border-border-accent transition-colors">
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="mdi:diameter" style="font-size:18px;color:#a855f7;"></iconify-icon>
+                <span class="text-sm text-neutral-300">Buje Fijación Barra Estabilizadora</span>
+              </div>
+              <span class="text-accent font-display font-bold text-sm">$2.00</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5352643984?text=Hola%2C%20me%20interesan%20piezas%20de%20camioneta%20Nissan%20Pickup" target="_blank" class="reveal reveal-delay-2 inline-flex items-center gap-2 mt-8 bg-purple-600 hover:bg-purple-500 text-white font-display font-semibold text-sm uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all duration-200 hover:scale-105">
+            <iconify-icon icon="mdi:whatsapp" style="font-size:18px;"></iconify-icon>
+            Consultar Pickup
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+
+  <!-- ============ WHY US / TRUST ============ -->
+  <section class="py-24 md:py-32">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <span class="text-xs font-medium tracking-[0.2em] uppercase text-accent">¿Por Qué Elegirnos?</span>
+        <h2 class="font-title text-3xl sm:text-4xl md:text-5xl mt-4 tracking-tight">
+          Confianza y <span class="italic text-accent">calidad</span>
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="reveal bg-surface-card border border-border rounded-2xl p-8 text-center hover:border-border-accent transition-all duration-300">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center mb-5">
+            <iconify-icon icon="mdi:tag-multiple" style="font-size:28px;color:#C7A368;"></iconify-icon>
+          </div>
+          <h3 class="font-display font-bold text-white mb-2">Precios Justos</h3>
+          <p class="text-sm text-neutral-400 font-light leading-relaxed">Negociables según cantidad. Más piezas, mejor precio.</p>
+        </div>
+
+        <div class="reveal reveal-delay-1 bg-surface-card border border-border rounded-2xl p-8 text-center hover:border-border-accent transition-all duration-300">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center mb-5">
+            <iconify-icon icon="mdi:shield-check" style="font-size:28px;color:#C7A368;"></iconify-icon>
+          </div>
+          <h3 class="font-display font-bold text-white mb-2">Calidad Garantizada</h3>
+          <p class="text-sm text-neutral-400 font-light leading-relaxed">Piezas seleccionadas para rendimiento óptimo de tu motor.</p>
+        </div>
+
+        <div class="reveal reveal-delay-2 bg-surface-card border border-border rounded-2xl p-8 text-center hover:border-border-accent transition-all duration-300">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center mb-5">
+            <iconify-icon icon="mdi:whatsapp" style="font-size:28px;color:#C7A368;"></iconify-icon>
+          </div>
+          <h3 class="font-display font-bold text-white mb-2">Atención Directa</h3>
+          <p class="text-sm text-neutral-400 font-light leading-relaxed">Comunicación rápida por WhatsApp. Sin intermediarios.</p>
+        </div>
+
+        <div class="reveal reveal-delay-3 bg-surface-card border border-border rounded-2xl p-8 text-center hover:border-border-accent transition-all duration-300">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center mb-5">
+            <iconify-icon icon="mdi:map-marker" style="font-size:28px;color:#C7A368;"></iconify-icon>
+          </div>
+          <h3 class="font-display font-bold text-white mb-2">Disponible en La Habana</h3>
+          <p class="text-sm text-neutral-400 font-light leading-relaxed">Stock disponible en La Habana. Acordá la entrega directamente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+
+  <!-- ============ CONTACT / CTA ============ -->
+  <section id="contacto" class="relative py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-[600px] h-[600px] rounded-full opacity-5" style="background:radial-gradient(circle, #25D366, transparent 70%);filter:blur(100px);"></div>
+    </div>
+
+    <div class="relative max-w-[1400px] mx-auto px-6 text-center">
+      <div class="reveal max-w-2xl mx-auto">
+        <div class="w-20 h-20 mx-auto rounded-3xl bg-green-500/10 flex items-center justify-center mb-8 pulse-glow" style="box-shadow:0 0 30px rgba(37,211,102,0.2);">
+          <iconify-icon icon="mdi:whatsapp" style="font-size:40px;color:#25D366;"></iconify-icon>
+        </div>
+
+        <span class="text-xs font-medium tracking-[0.2em] uppercase text-accent">Contacto Directo</span>
+        <h2 class="font-title text-3xl sm:text-4xl md:text-5xl mt-4 mb-6 tracking-tight">
+          Hacé tu <span class="italic text-accent">pedido</span> ahora
+        </h2>
+        <p class="text-neutral-400 font-light leading-relaxed mb-4 text-lg">
+          Escribinos por WhatsApp con las piezas que necesitás. Te respondemos con disponibilidad y precio final.
+        </p>
+        <p class="text-neutral-500 text-sm mb-10">
+          Recordá: los precios son negociables dependiendo de las cantidades.
+        </p>
+
+        <div class="flex items-center justify-center gap-3 mb-8">
+          <iconify-icon icon="mdi:phone" style="font-size:20px;color:#25D366;"></iconify-icon>
+          <a href="tel:+5352643984" class="font-display font-bold text-2xl sm:text-3xl text-white hover:text-accent transition-colors">+53 5264 3984</a>
+        </div>
+
+        <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20cotizar%20piezas%20de%20motor%20Nissan.%20Por%20favor%20envíenme%20el%20listado%20de%20precios." target="_blank" class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-display font-bold text-base uppercase tracking-wider px-10 py-5 rounded-2xl transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-green-500/20">
+          <iconify-icon icon="mdi:whatsapp" style="font-size:24px;"></iconify-icon>
+          Ir a WhatsApp
+          <iconify-icon icon="mdi:arrow-right" style="font-size:18px;"></iconify-icon>
+        </a>
+
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <span class="text-xs text-neutral-600 uppercase tracking-wider self-center mr-2">Mensajes rápidos:</span>
+          <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20para%20motor%20TD27" target="_blank" class="text-xs px-3 py-1.5 rounded-full border border-border hover:border-accent/30 text-neutral-400 hover:text-accent transition-all">TD27</a>
+          <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20para%20motor%20LD20II" target="_blank" class="text-xs px-3 py-1.5 rounded-full border border-border hover:border-accent/30 text-neutral-400 hover:text-accent transition-all">LD20II</a>
+          <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20para%20motor%20KA24DE" target="_blank" class="text-xs px-3 py-1.5 rounded-full border border-border hover:border-accent/30 text-neutral-400 hover:text-accent transition-all">KA24DE</a>
+          <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20de%20camioneta%20Nissan%20Pickup" target="_blank" class="text-xs px-3 py-1.5 rounded-full border border-border hover:border-accent/30 text-neutral-400 hover:text-accent transition-all">Pickup</a>
+          <a href="https://wa.me/5352643984?text=Hola%2C%20quiero%20comprar%20al%20por%20mayor.%20Necesito%20cotización%20para%20cantidades%20grandes." target="_blank" class="text-xs px-3 py-1.5 rounded-full border border-border hover:border-accent/30 text-neutral-400 hover:text-accent transition-all">Por Mayor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t border-border py-12">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
+            <iconify-icon icon="mdi:engine" style="color:#0C0C0C;font-size:16px;"></iconify-icon>
+          </div>
+          <span class="font-display font-bold text-sm text-white">NISSAN PARTS LA HABANA</span>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <a href="#motores" class="text-xs text-neutral-500 hover:text-accent transition-colors uppercase tracking-wider">Motores</a>
+          <a href="#catalogo" class="text-xs text-neutral-500 hover:text-accent transition-colors uppercase tracking-wider">Catálogo</a>
+          <a href="#pickup" class="text-xs text-neutral-500 hover:text-accent transition-colors uppercase tracking-wider">Pickup</a>
+          <a href="#contacto" class="text-xs text-neutral-500 hover:text-accent transition-colors uppercase tracking-wider">Contacto</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/5352643984" target="_blank" class="w-9 h-9 rounded-lg bg-surface-card border border-border flex items-center justify-center hover:border-accent/30 hover:bg-surface-hover transition-all">
+            <iconify-icon icon="mdi:whatsapp" style="font-size:18px;color:#25D366;"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-border text-center">
+        <p class="text-xs text-neutral-600">© 2025 Nissan Parts La Habana. Todos los precios expresados en USD y sujetos a cambio sin previo aviso.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============ WHATSAPP FLOAT ============ -->
+  <a href="https://wa.me/5352643984?text=Hola%2C%20vengo%20desde%20la%20página%20web.%20Necesito%20información%20sobre%20piezas%20Nissan." target="_blank" class="wa-float" aria-label="WhatsApp">
+    <iconify-icon icon="mdi:whatsapp" style="font-size:32px;color:#fff;"></iconify-icon>
+  </a>
+
+
+  <!-- ============ TOAST ============ -->
+  <div class="toast" id="toast">
+    <div class="flex items-center gap-3">
+      <iconify-icon icon="mdi:check-circle" style="font-size:18px;color:#C7A368;"></iconify-icon>
+      <span id="toastMsg">Texto</span>
+    </div>
+  </div>
+
+
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+    const parts = [
+      { engine: 'TD27', name: 'JGO Anillos (Aros) Nissan TD27 0.50', price: 35.00, type: 'diesel' },
+      { engine: 'TD23', name: 'Punta de Inyección Nissan TD23/TD27', price: 15.00, type: 'diesel' },
+      { engine: 'TD23', name: 'Bujia de Precalentamiento Nissan TD23/27 PN135, 11v', price: 10.00, type: 'diesel' },
+      { engine: 'QD32', name: 'Block QD32', price: 345.00, type: 'diesel' },
+      { engine: 'PICKUP', name: 'Tubo Escape Completo Parte Final', price: 145.50, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Farol Delantero Derecho', price: 40.00, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Farol Delantero Izquierdo', price: 40.00, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Barra de la Transmisión', price: 400.00, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Cubo Rueda Delantero c/ROD', price: 40.00, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Tambora de Frenos Trasero', price: 25.00, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Banda de Freno Trasera', price: 38.00, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Brazo de Suspensión Sup. Der.', price: 38.00, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Brazo de Suspensión Sup. Izq.', price: 38.00, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Brazo de Suspensión Inf. Der.', price: 38.00, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Brazo de Suspensión Inf. Izq.', price: 38.00, type: 'pickup' },
+      { engine: 'PICKUP', name: 'Buje de Fijación Barra Estabilizadora', price: 2.00, type: 'pickup' },
+      { engine: 'LD20II', name: 'Kit de Juntas Completo Nissan LD20 II', price: 25.00, type: 'diesel' },
+      { engine: 'LD20II', name: 'Junta Tapa Block Nissan LD20 II', price: 6.00, type: 'diesel' },
+      { engine: 'LD20II', name: 'Bujia de Precalentamiento LD20II CP01 11v', price: 10.00, type: 'diesel' },
+      { engine: 'LD20II', name: 'JGO Pistón Nissan LD20 II STD', price: 55.00, type: 'diesel' },
+      { engine: 'LD20II', name: 'JGO Pistón Nissan LD20II 0.50', price: 60.00, type: 'diesel' },
+      { engine: 'LD20II', name: 'Correa de Distribución T141 Nissan LD20 II', price: 20.00, type: 'diesel' },
+      { engine: 'LD20', name: 'Kit de Juntas Completo Nissan LD20', price: 25.00, type: 'diesel' },
+      { engine: 'LD20', name: 'Punta de Inyección Nissan LD20', price: 15.00, type: 'diesel' },
+      { engine: 'LD20', name: 'Junta de Tapa de Block Nissan LD20', price: 6.00, type: 'diesel' },
+      { engine: 'LD20', name: 'Junta de Tapa de Block Nissan LD20 Non-Asbestos', price: 6.00, type: 'diesel' },
+      { engine: 'LD20', name: 'JGO Aros Nissan LD20 STD', price: 35.00, type: 'diesel' },
+      { engine: 'LD20', name: 'JGO Aros Nissan LD20 0.50', price: 35.00, type: 'diesel' },
+      { engine: 'LD20', name: 'Sello Nissan LD20', price: 2.00, type: 'diesel' },
+      { engine: 'KA24DE', name: 'JGO Aros del Pistón 0.50', price: 40.00, type: 'gasolina' },
+      { engine: 'KA24DE', name: 'Válvula de Admisión', price: 4.00, type: 'gasolina' },
+      { engine: 'KA24DE', name: 'Válvula de Escape', price: 4.00, type: 'gasolina' },
+      { engine: 'KA24DE', name: 'Pistón con Pasador 0.50 Nissan', price: 15.00, type: 'gasolina' },
+      { engine: 'FE6', name: 'Punta de Inyección Nissan FE6', price: 15.00, type: 'diesel' },
+      { engine: 'FE6', name: 'JGO Pistón Nissan FE6 STD', price: 75.00, type: 'diesel' },
+      { engine: 'FE6', name: 'JGO Pistón Nissan FE6 0.50', price: 80.00, type: 'diesel' },
+      { engine: 'FE6', name: 'JGO Aros Nissan FE6 STD', price: 35.00, type: 'diesel' },
+      { engine: 'FE6', name: 'JGO Aros Nissan FE6 0.50', price: 35.00, type: 'diesel' },
+      { engine: 'FD35', name: 'Punta de Inyección Nissan FD33-5', price: 15.00, type: 'diesel' },
+      { engine: 'FD35', name: 'JGO Pistón Nissan FD35 STD', price: 80.00, type: 'diesel' },
+      { engine: 'FD35', name: 'JGO Pistón Nissan FD35 0.50', price: 80.00, type: 'diesel' },
+      { engine: 'FD35', name: 'Aros Nissan FD35 STD', price: 35.00, type: 'diesel' },
+      { engine: 'FD35', name: 'JGO Aros Nissan FD35 0.50', price: 35.00, type: 'diesel' },
+      { engine: 'ED33', name: 'Punta de Inyección Nissan ED33', price: 15.00, type: 'diesel' },
+    ];
+
+    const engineIcons = {
+      'TD27': 'mdi:engine', 'TD23': 'mdi:engine', 'LD20II': 'mdi:engine',
+      'LD20': 'mdi:engine', 'KA24DE': 'mdi:engine', 'FE6': 'mdi:engine',
+      'FD35': 'mdi:engine', 'QD32': 'mdi:engine', 'ED33': 'mdi:engine',
+      'PICKUP': 'mdi:car-pickup'
+    };
+    const typeColors = { diesel: '#eab308', gasolina: '#3b82f6', pickup: '#a855f7' };
+    const typeBg = { diesel: 'rgba(234,179,8,0.1)', gasolina: 'rgba(59,130,246,0.1)', pickup: 'rgba(168,85,247,0.1)' };
+
+    let currentFilter = 'ALL';
+    let currentSearch = '';
+
+    function renderParts() {
+      const grid = document.getElementById('partsGrid');
+      const empty = document.getElementById('emptyState');
+      const count = document.getElementById('resultCount');
+
+      let filtered = parts;
+
+      if (currentFilter !== 'ALL') {
+        filtered = filtered.filter(p => p.engine === currentFilter);
+      }
+
+      if (currentSearch) {
+        const q = currentSearch.toLowerCase();
+        filtered = filtered.filter(p =>
+          p.name.toLowerCase().includes(q) ||
+          p.engine.toLowerCase().includes(q)
+        );
+      }
+
+      count.textContent = `Mostrando ${filtered.length} pieza${filtered.length !== 1 ? 's' : ''}`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        empty.classList.remove('hidden');
+        return;
+      }
+
+      empty.classList.add('hidden');
+
+      grid.innerHTML = filtered.map((p, i) => {
+        const waMsg = encodeURIComponent(`Hola, estoy interesado en:\n• ${p.engine} — ${p.name}\n• Precio: $${p.price.toFixed(2)} USD\n\n¿Está disponible?`);
+        const icon = engineIcons[p.engine] || 'mdi:cog';
+        const color = typeColors[p.type];
+        const bg = typeBg[p.type];
+        const badgeClass = p.type === 'diesel' ? 'badge-diesel' : p.type === 'gasolina' ? 'badge-gasolina' : 'badge-pickup';
+        const badgeLabel = p.type === 'diesel' ? 'Diésel' : p.type === 'gasolina' ? 'Gasolina' : 'Pickup';
+
+        return `
+          <div class="part-card" style="animation: slide-in-left 0.4s ${i * 0.03}s cubic-bezier(0.16,1,0.3,1) both;">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:${bg}">
+                  <iconify-icon icon="${icon}" style="font-size:18px;color:${color};"></iconify-icon>
+                </div>
+                <div>
+                  <span class="font-display font-bold text-xs text-white tracking-wide">${p.engine}</span>
+                  <div class="mt-0.5"><span class="engine-badge ${badgeClass}" style="font-size:0.55rem;padding:0.1rem 0.4rem;">${badgeLabel}</span></div>
+                </div>
+              </div>
+              <div class="text-right flex-shrink-0">
+                <span class="font-display font-bold text-accent text-lg">$${p.price.toFixed(2)}</span>
+                <div class="text-[10px] text-neutral-600 uppercase tracking-wider">USD</div>
+              </div>
+            </div>
+            <p class="text-sm text-neutral-300 leading-relaxed mb-4 pl-[2.875rem]">${p.name}</p>
+            <div class="flex items-center gap-2 pl-[2.875rem]">
+              <a href="https://wa.me/5352643984?text=${waMsg}" target="_blank"
+                class="flex-1 flex items-center justify-center gap-1.5 bg-green-600/10 hover:bg-green-600/20 text-green-400 text-xs font-medium py-2 rounded-lg transition-all border border-green-600/20 hover:border-green-600/40">
+                <iconify-icon icon="mdi:whatsapp" style="font-size:14px;"></iconify-icon>
+                Pedir
+              </a>
+              <button onclick="copyPart('${p.engine} — ${p.name.replace(/'/g, "\\'")} — $${p.price.toFixed(2)} USD')"
+                class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 text-neutral-500 hover:text-white transition-all border border-border">
+                <iconify-icon icon="mdi:content-copy" style="font-size:14px;"></iconify-icon>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterParts(engine) {
+      currentFilter = engine;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.trim() === (engine === 'ALL' ? 'Todos' : engine));
+      });
+      renderParts();
+      if (engine !== 'ALL') {
+        document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function searchParts() {
+      currentSearch = document.getElementById('searchInput').value.trim();
+      renderParts();
+    }
+
+    function copyPart(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Pieza copiada al portapapeles');
+      }).catch(() => {
+        showToast('Pieza: ' + text);
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const burgerIcon = document.getElementById('burger-icon');
+    let menuOpen = false;
+
+    burger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      burgerIcon.setAttribute('icon', menuOpen ? 'mdi:close' : 'mdi:menu');
+    });
+
+    function closeMobile() {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      burgerIcon.setAttribute('icon', 'mdi:menu');
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function animateCounters() {
+      document.querySelectorAll('.stat-number').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        const duration = 1500;
+        const start = performance.now();
+        function update(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target);
+          if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+      });
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          counterObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      const scrollY = window.scrollY;
+      if (scrollY > 100) {
+        navbar.style.background = 'rgba(12,12,12,0.95)';
+        navbar.style.borderBottomColor = 'rgba(255,255,255,0.08)';
+      } else {
+        navbar.style.background = 'rgba(12,12,12,0.85)';
+        navbar.style.borderBottomColor = 'rgba(255,255,255,0.05)';
+      }
+      lastScroll = scrollY;
+    });
+
+    renderParts();
+  </script>
+</body>
+</html>
