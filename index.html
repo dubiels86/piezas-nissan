@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Piezas Nissan — La Habana</title>
-<meta name="description" content="Venta de piezas de motores Nissan LD20, LD20II, TD23, TD27, KA24DE, FE6, FD35. Disponible en La Habana.">
+<title>Piezas Nissan — FD35 · FE6 · LD20 · LD20II · TD23/27</title>
+<meta name="description" content="Venta de piezas de motores Nissan FD35, FE6, LD20, LD20II, TD23/27. Disponible en La Habana. Precios negociables segun cantidad.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Piezas de Motores Nissan — La Habana">
-<meta property="og:description" content="Stock disponible en La Habana. Anillos, pistones, juntas, inyectores. Precios negociables.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1200&h=630&fit=crop">
+<meta property="og:description" content="Stock disponible en La Habana. Aros, pistones, juntas, inyectores. Precios negociables.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&h=630&fit=crop">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://dubiels86.github.io/piezas-nissan">
+<meta property="og:url" content="https://TUSUARIO.github.io/TU-REPO/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Piezas de Motores Nissan">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1200&h=630&fit=crop">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&h=630&fit=crop">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -64,8 +64,6 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
 .wbtn:hover { transform:scale(1.1); }
 .badge { display:inline-flex; padding:0.15rem 0.55rem; border-radius:5px; font-size:0.6rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; font-family:Manrope,sans-serif; }
 .badge-d { background:rgba(234,179,8,0.12); color:#eab308; }
-.badge-g { background:rgba(59,130,246,0.12); color:#3b82f6; }
-.badge-p { background:rgba(168,85,247,0.12); color:#a855f7; }
 .snum { font-family:'Instrument Serif',serif; font-size:2.5rem; color:#C7A368; line-height:1; }
 .sinput { background:#111; border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:0.85rem 1rem 0.85rem 3rem; color:#fff; font-family:Inter,sans-serif; font-size:0.95rem; width:100%; outline:none; transition:all 0.25s; }
 .sinput:focus { border-color:rgba(199,163,104,0.4); box-shadow:0 0 0 3px rgba(199,163,104,0.08); }
@@ -74,9 +72,12 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
 .mobmenu.open { max-height:400px; }
 .toast { position:fixed; bottom:6rem; right:2rem; z-index:1001; background:#111; border:1px solid rgba(199,163,104,0.3); border-radius:12px; padding:1rem 1.5rem; color:#fff; font-size:0.85rem; transform:translateY(20px); opacity:0; transition:all 0.4s; pointer-events:none; max-width:300px; }
 .toast.show { transform:translateY(0); opacity:1; pointer-events:auto; }
-.grid-parts { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; }
+.grid-parts { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1rem; }
 @media(min-width:1024px){ .grid-parts{grid-template-columns:repeat(3,1fr);} }
 @media(max-width:640px){ .grid-parts{grid-template-columns:1fr;} }
+.stock-ok { color:#4ade80; }
+.stock-low { color:#facc15; }
+.code-tag { font-family:'Courier New',monospace; font-size:0.65rem; color:#737373; background:rgba(255,255,255,0.04); padding:0.1rem 0.4rem; border-radius:4px; letter-spacing:0.03em; }
 </style>
 </head>
 <body>
@@ -89,12 +90,11 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
         <iconify-icon icon="mdi:engine" style="color:#0C0C0C;font-size:20px"></iconify-icon>
       </div>
       <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:14px;color:white;letter-spacing:0.03em">NISSAN PARTS</span>
-      <span style="font-size:12px;color:#737373;display:none" class="sm-hide">La Habana</span>
+      <span style="font-size:12px;color:#737373" class="sm-hide">La Habana</span>
     </a>
     <div style="display:flex;align-items:center;gap:2rem" class="desk-nav">
       <a href="#motores" style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#a3a3a3;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='#C7A368'" onmouseout="this.style.color='#a3a3a3'">Motores</a>
       <a href="#catalogo" style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#a3a3a3;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='#C7A368'" onmouseout="this.style.color='#a3a3a3'">Catalogo</a>
-      <a href="#pickup" style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#a3a3a3;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='#C7A368'" onmouseout="this.style.color='#a3a3a3'">Camioneta</a>
       <a href="#contacto" style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#a3a3a3;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='#C7A368'" onmouseout="this.style.color='#a3a3a3'">Contacto</a>
       <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20info%20de%20piezas%20Nissan" target="_blank" style="display:flex;align-items:center;gap:0.5rem;background:#C7A368;color:#0C0C0C;font-family:Manrope,sans-serif;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;padding:0.6rem 1.25rem;border-radius:8px;text-decoration:none;transition:all 0.2s" onmouseover="this.style.background='#e0b979';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#C7A368';this.style.transform='scale(1)'">
         <iconify-icon icon="mdi:whatsapp" style="font-size:16px"></iconify-icon> Pedir Piezas
@@ -108,7 +108,6 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
     <div style="padding:1rem 1.5rem;display:flex;flex-direction:column;gap:1rem;border-top:1px solid rgba(255,255,255,0.08)">
       <a href="#motores" onclick="closeMob()" style="color:#d4d4d4;text-decoration:none;font-size:14px">Motores</a>
       <a href="#catalogo" onclick="closeMob()" style="color:#d4d4d4;text-decoration:none;font-size:14px">Catalogo</a>
-      <a href="#pickup" onclick="closeMob()" style="color:#d4d4d4;text-decoration:none;font-size:14px">Camioneta</a>
       <a href="#contacto" onclick="closeMob()" style="color:#d4d4d4;text-decoration:none;font-size:14px">Contacto</a>
       <a href="https://wa.me/5352643984" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;background:#C7A368;color:#0C0C0C;font-weight:600;font-size:14px;padding:0.75rem 1.25rem;border-radius:8px;text-decoration:none;margin-top:0.5rem">
         <iconify-icon icon="mdi:whatsapp" style="font-size:18px"></iconify-icon> Pedir por WhatsApp
@@ -123,7 +122,7 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
     <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&h=1080&fit=crop" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0.15;filter:grayscale(100%) contrast(1.1)">
     <div style="position:absolute;inset:0;background:linear-gradient(to top,#0C0C0C 5%,rgba(12,12,12,0.7) 40%,rgba(12,12,12,0.85) 100%)"></div>
   </div>
-  <div style="position:absolute;top:25%;left:25%;width:384px;height:384px;border-radius:50%;opacity:0.1" class="floaty" ></div>
+  <div style="position:absolute;top:25%;left:25%;width:384px;height:384px;border-radius:50%;opacity:0.1;background:radial-gradient(circle,#C7A368,transparent 70%);filter:blur(80px)" class="floaty"></div>
   <div style="position:relative;z-index:10;max-width:1400px;margin:0 auto;padding:0 1.5rem;text-align:center">
     <div class="reveal" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);margin-bottom:2rem">
       <span style="width:8px;height:8px;border-radius:50%;background:#C7A368" class="glow"></span>
@@ -133,13 +132,13 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
       Piezas de Motores<br><span style="color:#C7A368">Nissan</span>
     </h1>
     <p class="reveal d2" style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.25rem,3vw,1.875rem);color:#a3a3a3;margin:0 0 1rem">
-      LD20 · LD20II · TD23 · TD27 · KA24DE · FE6 · FD35
+      FD35 · FE6 · LD20 · LD20II · TD23/27
     </p>
     <p class="reveal d3" style="color:#737373;font-size:clamp(1rem,2vw,1.125rem);max-width:640px;margin:0 auto 2.5rem;font-weight:300;line-height:1.7">
-      Repuestos de alta calidad para motores diesel y gasolina Nissan.
+      Aros, pistones, juntas, inyectores y mas.
       <span style="color:#d4d4d4;font-weight:400">Precios negociables dependiendo de las cantidades.</span>
     </p>
-    <div class="reveal d4" style="display:flex;flex-direction:column;sm:flex-direction:row;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap">
+    <div class="reveal d4" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem">
       <a href="#catalogo" style="display:inline-flex;align-items:center;gap:0.75rem;background:#C7A368;color:#0C0C0C;font-family:Manrope,sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:0.05em;padding:1rem 2rem;border-radius:12px;text-decoration:none;transition:all 0.2s" onmouseover="this.style.background='#e0b979';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#C7A368';this.style.transform='scale(1)'">
         <iconify-icon icon="mdi:format-list-bulleted" style="font-size:18px"></iconify-icon> Ver Catalogo
       </a>
@@ -147,9 +146,10 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
         <iconify-icon icon="mdi:whatsapp" style="font-size:20px;color:#25D366"></iconify-icon> Consultar por WhatsApp
       </a>
     </div>
-    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:320px;margin:4rem auto 0">
-      <div style="text-align:center"><div class="snum" data-target="42">0</div><div style="font-size:12px;color:#737373;text-transform:uppercase;letter-spacing:0.1em;margin-top:4px">Piezas</div></div>
-      <div style="text-align:center"><div class="snum" data-target="9">0</div><div style="font-size:12px;color:#737373;text-transform:uppercase;letter-spacing:0.1em;margin-top:4px">Motores</div></div>
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;max-width:480px;margin:4rem auto 0">
+      <div style="text-align:center"><div class="snum" data-target="17">0</div><div style="font-size:11px;color:#737373;text-transform:uppercase;letter-spacing:0.1em;margin-top:4px">Piezas</div></div>
+      <div style="text-align:center"><div class="snum" data-target="5">0</div><div style="font-size:11px;color:#737373;text-transform:uppercase;letter-spacing:0.1em;margin-top:4px">Motores</div></div>
+      <div style="text-align:center"><div class="snum" data-target="4855">0</div><div style="font-size:11px;color:#737373;text-transform:uppercase;letter-spacing:0.1em;margin-top:4px">En Stock</div></div>
     </div>
   </div>
 </section>
@@ -173,45 +173,23 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
     <div class="reveal" style="text-align:center;margin-bottom:3rem">
       <span style="font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#C7A368">Inventario Actual</span>
       <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(1.875rem,4vw,3rem);margin:1rem 0 1.5rem;letter-spacing:-0.02em">Catalogo de <span style="font-style:italic;color:#C7A368">Piezas</span></h2>
-      <p style="color:#a3a3a3;max-width:560px;margin:0 auto;font-weight:300">Todos los precios en USD. <span style="color:#d4d4d4;font-weight:400">Negociables segun cantidad.</span></p>
+      <p style="color:#a3a3a3;max-width:560px;margin:0 auto;font-weight:300">Precios en USD. <span style="color:#d4d4d4;font-weight:400">Negociables segun cantidad.</span></p>
     </div>
     <div class="reveal" style="margin-bottom:2rem;display:flex;flex-direction:column;gap:1rem;align-items:center;flex-wrap:wrap">
       <div style="position:relative;width:100%;max-width:320px">
         <iconify-icon icon="mdi:magnify" style="font-size:18px;color:#525252;position:absolute;left:1rem;top:50%;transform:translateY(-50%)"></iconify-icon>
-        <input type="text" id="searchInput" class="sinput" placeholder="Buscar pieza..." oninput="doSearch()">
+        <input type="text" id="searchInput" class="sinput" placeholder="Buscar pieza o codigo..." oninput="doSearch()">
       </div>
       <div id="filterBtns" style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center"></div>
     </div>
-    <div style="margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
-      <p style="font-size:14px;color:#737373" id="countLabel">Mostrando 42 piezas</p>
+    <div style="margin-bottom:1.5rem">
+      <p style="font-size:14px;color:#737373" id="countLabel">Mostrando 17 piezas</p>
     </div>
     <div class="grid-parts" id="partsGrid"></div>
     <div id="emptyMsg" style="display:none;text-align:center;padding:5rem 0">
       <iconify-icon icon="mdi:engine-off" style="font-size:48px;color:#333"></iconify-icon>
       <p style="color:#737373;margin-top:1rem;font-size:1.125rem">No se encontraron piezas.</p>
       <button onclick="setFilter('ALL')" style="margin-top:1rem;color:#C7A368;font-size:14px;background:none;border:none;cursor:pointer;text-decoration:underline">Mostrar todas</button>
-    </div>
-  </div>
-</section>
-<div class="divider" style="max-width:1400px;margin:0 auto"></div>
-
-<!-- PICKUP -->
-<section id="pickup" style="padding:6rem 0;overflow:hidden;position:relative">
-  <div style="max-width:1400px;margin:0 auto;padding:0 1.5rem;display:grid;gap:4rem;align-items:center" class="pickup-grid">
-    <div class="reveal" style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3">
-      <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1200&h=630&fit=crop" alt="Nissan Pickup" style="width:100%;height:100%;object-fit:cover;filter:grayscale(80%) contrast(1.1)">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,#0C0C0C,transparent)"></div>
-    </div>
-    <div>
-      <div class="reveal">
-        <span style="font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#C7A368">Nissan Pickup</span>
-        <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(1.875rem,4vw,3rem);margin:1rem 0 1.5rem;letter-spacing:-0.02em">Piezas de <span style="font-style:italic;color:#C7A368">Camioneta</span></h2>
-        <p style="color:#a3a3a3;font-weight:300;line-height:1.7;margin-bottom:2rem">Faroles, suspension, frenos, transmision y mas para tu Nissan Pickup.</p>
-      </div>
-      <div id="pickupList" class="reveal d1" style="display:flex;flex-direction:column;gap:0.75rem"></div>
-      <a href="https://wa.me/5352643984?text=Hola%2C%20me%20interesan%20piezas%20de%20camioneta%20Nissan" target="_blank" class="reveal d2" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:2rem;background:#9333ea;color:white;font-family:Manrope,sans-serif;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.05em;padding:0.875rem 1.5rem;border-radius:12px;text-decoration:none;transition:all 0.2s" onmouseover="this.style.background='#7c3aed';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#9333ea';this.style.transform='scale(1)'">
-        <iconify-icon icon="mdi:whatsapp" style="font-size:18px"></iconify-icon> Consultar Pickup
-      </a>
     </div>
   </div>
 </section>
@@ -227,23 +205,23 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem">
       <div class="reveal" style="background:#111;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;text-align:center;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
         <div style="width:56px;height:56px;margin:0 auto 1.25rem;border-radius:16px;background:rgba(199,163,104,0.1);display:flex;align-items:center;justify-content:center"><iconify-icon icon="mdi:tag-multiple" style="font-size:28px;color:#C7A368"></iconify-icon></div>
-        <h3 style="font-family:Manrope,sans-serif;font-weight:700;color:white;margin-bottom:0.5rem">Precios Justos</h3>
-        <p style="font-size:14px;color:#a3a3a3;font-weight:300;line-height:1.6">Negociables segun cantidad.</p>
+        <h3 style="font-family:Manrope,sans-serif;font-weight:700;color:white;margin-bottom:0.5rem">Precios Negociables</h3>
+        <p style="font-size:14px;color:#a3a3a3;font-weight:300;line-height:1.6">Segun cantidad. Mas piezas, mejor precio.</p>
       </div>
       <div class="reveal d1" style="background:#111;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;text-align:center;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
-        <div style="width:56px;height:56px;margin:0 auto 1.25rem;border-radius:16px;background:rgba(199,163,104,0.1);display:flex;align-items:center;justify-content:center"><iconify-icon icon="mdi:shield-check" style="font-size:28px;color:#C7A368"></iconify-icon></div>
-        <h3 style="font-family:Manrope,sans-serif;font-weight:700;color:white;margin-bottom:0.5rem">Calidad Garantizada</h3>
-        <p style="font-size:14px;color:#a3a3a3;font-weight:300;line-height:1.6">Piezas para rendimiento optimo.</p>
+        <div style="width:56px;height:56px;margin:0 auto 1.25rem;border-radius:16px;background:rgba(199,163,104,0.1);display:flex;align-items:center;justify-content:center"><iconify-icon icon="mdi:package-variant-closed" style="font-size:28px;color:#C7A368"></iconify-icon></div>
+        <h3 style="font-family:Manrope,sans-serif;font-weight:700;color:white;margin-bottom:0.5rem">Stock Real</h3>
+        <p style="font-size:14px;color:#a3a3a3;font-weight:300;line-height:1.6">4,855 unidades en deposito listas para entrega.</p>
       </div>
       <div class="reveal d2" style="background:#111;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;text-align:center;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
         <div style="width:56px;height:56px;margin:0 auto 1.25rem;border-radius:16px;background:rgba(199,163,104,0.1);display:flex;align-items:center;justify-content:center"><iconify-icon icon="mdi:whatsapp" style="font-size:28px;color:#C7A368"></iconify-icon></div>
         <h3 style="font-family:Manrope,sans-serif;font-weight:700;color:white;margin-bottom:0.5rem">Atencion Directa</h3>
-        <p style="font-size:14px;color:#a3a3a3;font-weight:300;line-height:1.6">Rapido por WhatsApp.</p>
+        <p style="font-size:14px;color:#a3a3a3;font-weight:300;line-height:1.6">WhatsApp directo. Sin intermediarios.</p>
       </div>
       <div class="reveal d3" style="background:#111;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;text-align:center;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
         <div style="width:56px;height:56px;margin:0 auto 1.25rem;border-radius:16px;background:rgba(199,163,104,0.1);display:flex;align-items:center;justify-content:center"><iconify-icon icon="mdi:map-marker" style="font-size:28px;color:#C7A368"></iconify-icon></div>
-        <h3 style="font-family:Manrope,sans-serif;font-weight:700;color:white;margin-bottom:0.5rem">Disponible en La Habana</h3>
-        <p style="font-size:14px;color:#a3a3a3;font-weight:300;line-height:1.6">Acorda la entrega directamente.</p>
+        <h3 style="font-family:Manrope,sans-serif;font-weight:700;color:white;margin-bottom:0.5rem">La Habana</h3>
+        <p style="font-size:14px;color:#a3a3a3;font-weight:300;line-height:1.6">Disponible en La Habana. Acorda la entrega.</p>
       </div>
     </div>
   </div>
@@ -260,7 +238,7 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
       <span style="font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#C7A368">Contacto Directo</span>
       <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(1.875rem,4vw,3rem);margin:1rem 0 1.5rem;letter-spacing:-0.02em">Hace tu <span style="font-style:italic;color:#C7A368">pedido</span> ahora</h2>
       <p style="color:#a3a3a3;font-weight:300;line-height:1.7;font-size:1.125rem;margin-bottom:1rem">Escribinos por WhatsApp con las piezas que necesitas.</p>
-      <p style="color:#737373;font-size:14px;margin-bottom:2.5rem">Precios negociables dependiendo de las cantidades.</p>
+      <p style="color:#737373;font-size:14px;margin-bottom:2.5rem">Los precios son negociables dependiendo de las cantidades.</p>
       <div style="display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:2rem">
         <iconify-icon icon="mdi:phone" style="font-size:20px;color:#25D366"></iconify-icon>
         <a href="tel:+5352643984" style="font-family:Manrope,sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,1.875rem);color:white;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='#C7A368'" onmouseout="this.style.color='white'">+53 5264 3984</a>
@@ -271,10 +249,11 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
       </a>
       <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem">
         <span style="font-size:12px;color:#525252;text-transform:uppercase;letter-spacing:0.1em;align-self:center;margin-right:0.5rem">Rapido:</span>
-        <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20TD27" target="_blank" style="font-size:12px;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);color:#a3a3a3;text-decoration:none;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)';this.style.color='#C7A368'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='#a3a3a3'">TD27</a>
+        <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20FD35" target="_blank" style="font-size:12px;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);color:#a3a3a3;text-decoration:none;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)';this.style.color='#C7A368'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='#a3a3a3'">FD35</a>
+        <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20FE6" target="_blank" style="font-size:12px;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);color:#a3a3a3;text-decoration:none;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)';this.style.color='#C7A368'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='#a3a3a3'">FE6</a>
+        <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20LD20" target="_blank" style="font-size:12px;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);color:#a3a3a3;text-decoration:none;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)';this.style.color='#C7A368'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='#a3a3a3'">LD20</a>
         <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20LD20II" target="_blank" style="font-size:12px;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);color:#a3a3a3;text-decoration:none;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)';this.style.color='#C7A368'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='#a3a3a3'">LD20II</a>
-        <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20KA24DE" target="_blank" style="font-size:12px;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);color:#a3a3a3;text-decoration:none;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)';this.style.color='#C7A368'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='#a3a3a3'">KA24DE</a>
-        <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20Pickup" target="_blank" style="font-size:12px;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);color:#a3a3a3;text-decoration:none;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)';this.style.color='#C7A368'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='#a3a3a3'">Pickup</a>
+        <a href="https://wa.me/5352643984?text=Hola%2C%20necesito%20piezas%20TD23%2F27" target="_blank" style="font-size:12px;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);color:#a3a3a3;text-decoration:none;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)';this.style.color='#C7A368'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='#a3a3a3'">TD23/27</a>
         <a href="https://wa.me/5352643984?text=Hola%2C%20quiero%20comprar%20al%20por%20mayor" target="_blank" style="font-size:12px;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);color:#a3a3a3;text-decoration:none;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)';this.style.color='#C7A368'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='#a3a3a3'">Por Mayor</a>
       </div>
     </div>
@@ -292,7 +271,6 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
       <div style="display:flex;gap:1.5rem">
         <a href="#motores" style="font-size:12px;color:#737373;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em">Motores</a>
         <a href="#catalogo" style="font-size:12px;color:#737373;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em">Catalogo</a>
-        <a href="#pickup" style="font-size:12px;color:#737373;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em">Pickup</a>
         <a href="#contacto" style="font-size:12px;color:#737373;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em">Contacto</a>
       </div>
       <a href="https://wa.me/5352643984" target="_blank" style="width:36px;height:36px;border-radius:8px;background:#111;border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:border-color 0.2s" onmouseover="this.style.borderColor='rgba(199,163,104,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
@@ -300,7 +278,7 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
       </a>
     </div>
     <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);text-align:center">
-      <p style="font-size:12px;color:#525252">2025 Nissan Parts La Habana. Precios en USD.</p>
+      <p style="font-size:12px;color:#525252">2025 Nissan Parts La Habana. Precios en USD, sujetos a cambio.</p>
     </div>
   </div>
 </footer>
@@ -317,7 +295,6 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
 @media(max-width:768px){
   .desk-nav{display:none !important}
   .mob-btn{display:block !important}
-  .pickup-grid{grid-template-columns:1fr !important}
   #engineGrid{grid-template-columns:repeat(2,1fr) !important}
   .sm-hide{display:none !important}
 }
@@ -330,67 +307,35 @@ body { background: #0C0C0C; color: #ffffff; margin: 0; }
 
 <script>
 var parts = [
-  {e:"TD27",n:"JGO Anillos (Aros) Nissan TD27 0.50",p:35,t:"d"},
-  {e:"TD23",n:"Punta de Inyeccion Nissan TD23/TD27",p:15,t:"d"},
-  {e:"TD23",n:"Bujia de Precalentamiento Nissan TD23/27 PN135 11v",p:10,t:"d"},
-  {e:"QD32",n:"Block QD32",p:345,t:"d"},
-  {e:"PICKUP",n:"Tubo Escape Completo Parte Final",p:145.5,t:"p"},
-  {e:"PICKUP",n:"Farol Delantero Derecho",p:40,t:"p"},
-  {e:"PICKUP",n:"Farol Delantero Izquierdo",p:40,t:"p"},
-  {e:"PICKUP",n:"Barra de la Transmision",p:400,t:"p"},
-  {e:"PICKUP",n:"Cubo Rueda Delantero c/ROD",p:40,t:"p"},
-  {e:"PICKUP",n:"Tambora de Frenos Trasero",p:25,t:"p"},
-  {e:"PICKUP",n:"Banda de Freno Trasera",p:38,t:"p"},
-  {e:"PICKUP",n:"Brazo Suspension Sup. Der.",p:38,t:"p"},
-  {e:"PICKUP",n:"Brazo Suspension Sup. Izq.",p:38,t:"p"},
-  {e:"PICKUP",n:"Brazo Suspension Inf. Der.",p:38,t:"p"},
-  {e:"PICKUP",n:"Brazo Suspension Inf. Izq.",p:38,t:"p"},
-  {e:"PICKUP",n:"Buje Fijacion Barra Estabilizadora",p:2,t:"p"},
-  {e:"LD20II",n:"Kit de Juntas Completo Nissan LD20 II",p:25,t:"d"},
-  {e:"LD20II",n:"Junta Tapa Block Nissan LD20 II",p:6,t:"d"},
-  {e:"LD20II",n:"Bujia de Precalentamiento LD20II CP01 11v",p:10,t:"d"},
-  {e:"LD20II",n:"JGO Piston Nissan LD20 II STD",p:55,t:"d"},
-  {e:"LD20II",n:"JGO Piston Nissan LD20II 0.50",p:60,t:"d"},
-  {e:"LD20II",n:"Correa de Distribucion T141 Nissan LD20 II",p:20,t:"d"},
-  {e:"LD20",n:"Kit de Juntas Completo Nissan LD20",p:25,t:"d"},
-  {e:"LD20",n:"Punta de Inyeccion Nissan LD20",p:15,t:"d"},
-  {e:"LD20",n:"Junta de Tapa de Block Nissan LD20",p:6,t:"d"},
-  {e:"LD20",n:"Junta de Tapa de Block Nissan LD20 Non-Asbestos",p:6,t:"d"},
-  {e:"LD20",n:"JGO Aros Nissan LD20 STD",p:35,t:"d"},
-  {e:"LD20",n:"JGO Aros Nissan LD20 0.50",p:35,t:"d"},
-  {e:"LD20",n:"Sello Nissan LD20",p:2,t:"d"},
-  {e:"KA24DE",n:"JGO Aros del Piston 0.50",p:40,t:"g"},
-  {e:"KA24DE",n:"Valvula de Admision",p:4,t:"g"},
-  {e:"KA24DE",n:"Valvula de Escape",p:4,t:"g"},
-  {e:"KA24DE",n:"Piston con Pasador 0.50 Nissan",p:15,t:"g"},
-  {e:"FE6",n:"Punta de Inyeccion Nissan FE6",p:15,t:"d"},
-  {e:"FE6",n:"JGO Piston Nissan FE6 STD",p:75,t:"d"},
-  {e:"FE6",n:"JGO Piston Nissan FE6 0.50",p:80,t:"d"},
-  {e:"FE6",n:"JGO Aros Nissan FE6 STD",p:35,t:"d"},
-  {e:"FE6",n:"JGO Aros Nissan FE6 0.50",p:35,t:"d"},
-  {e:"FD35",n:"Punta de Inyeccion Nissan FD33-5",p:15,t:"d"},
-  {e:"FD35",n:"JGO Piston Nissan FD35 STD",p:80,t:"d"},
-  {e:"FD35",n:"JGO Piston Nissan FD35 0.50",p:80,t:"d"},
-  {e:"FD35",n:"Aros Nissan FD35 STD",p:35,t:"d"},
-  {e:"FD35",n:"JGO Aros Nissan FD35 0.50",p:35,t:"d"},
-  {e:"ED33",n:"Punta de Inyeccion Nissan ED33",p:15,t:"d"}
+  {e:"FD35", c:"12033-01T10.50", n:"Aros Nissan FD35 0.50", u:"JGO", s:35, p:35.00},
+  {e:"FD35", c:"12033-01T10", n:"Aros Nissan FD35 STD", u:"JGO", s:39, p:35.00},
+  {e:"FD35", c:"12010-01T040.50", n:"PISTON Nissan FD35 0.50", u:"JGO", s:98, p:100.00},
+  {e:"FD35", c:"12010-01T04", n:"PISTON Nissan FD35 STD", u:"JGO", s:115, p:100.00},
+  {e:"FD35", c:"105015-7131", n:"Punta de Inyeccion Nissan FD33-5", u:"UNO", s:640, p:10.00},
+  {e:"FE6", c:"12040-Z5504.50", n:"Aros Nissan FE 6 0.50", u:"JGO", s:167, p:35.00},
+  {e:"FE6", c:"12040-Z5504", n:"Aros Nissan FE 6 STD", u:"JGO", s:152, p:35.00},
+  {e:"FE6", c:"12010-Z56150.50", n:"PISTON Nissan FE6 0.50", u:"JGO", s:144, p:100.00},
+  {e:"FE6", c:"12010-Z5615", n:"PISTON Nissan FE6 STD", u:"JGO", s:149, p:100.00},
+  {e:"FE6", c:"105015-7360", n:"Punta de Inyeccion Nissan FE6", u:"UNO", s:458, p:30.00},
+  {e:"LD20", c:"10101-W1727", n:"Kit de Juntas Completo Nissan LD 20", u:"UNO", s:27, p:45.00},
+  {e:"LD20", c:"105000-1871", n:"Punta de Inyeccion Nissan LD20", u:"UNO", s:847, p:30.00},
+  {e:"LD20II", c:"11065-G5501", n:"Bujia de Precalentamiento Nissan LD 20II CP01 11v", u:"UNO", s:1045, p:10.00},
+  {e:"LD20II", c:"16806-G5510", n:"Correa de Distribucion T 141 Nissan LD20 II", u:"UNO", s:63, p:30.00},
+  {e:"LD20II", c:"10101-G5525", n:"KIT DE JUNTAS COMPLETO NISSAN LD 20II", u:"UNO", s:192, p:45.00},
+  {e:"TD23/27", c:"11065-43G01", n:"Bujia de Precalentamiento Nissan TD23/27 PN135,11v", u:"UNO", s:559, p:10.00},
+  {e:"TD23/27", c:"105700-1130", n:"Punta de Inyeccion Nissan TD23/TD27", u:"UNO", s:608, p:30.00}
 ];
 
-var engines = ["TD27","TD23","LD20II","LD20","KA24DE","FE6","FD35","QD32","ED33","PICKUP"];
-var typeInfo = {
-  d: {color:"#eab308",bg:"rgba(234,179,8,0.1)",label:"Diesel",cls:"badge-d"},
-  g: {color:"#3b82f6",bg:"rgba(59,130,246,0.1)",label:"Gasolina",cls:"badge-g"},
-  p: {color:"#a855f7",bg:"rgba(168,85,247,0.1)",label:"Pickup",cls:"badge-p"}
-};
-var icons = {TD27:"mdi:engine",TD23:"mdi:engine",LD20II:"mdi:engine",LD20:"mdi:engine",KA24DE:"mdi:engine",FE6:"mdi:engine",FD35:"mdi:engine",QD32:"mdi:engine",ED33:"mdi:engine",PICKUP:"mdi:car-pickup"};
+var engines = ["FD35","FE6","LD20","LD20II","TD23/27"];
+var icons = {FD35:"mdi:engine",FE6:"mdi:engine",LD20:"mdi:engine",LD20II:"mdi:engine","TD23/27":"mdi:engine"};
 
 var currentFilter = "ALL";
 var currentSearch = "";
 
-function getType(engine) {
-  if (engine === "KA24DE") return "g";
-  if (engine === "PICKUP") return "p";
-  return "d";
+function totalStock() {
+  var t = 0;
+  for (var i = 0; i < parts.length; i++) t += parts[i].s;
+  return t;
 }
 
 function buildEngines() {
@@ -398,12 +343,14 @@ function buildEngines() {
   var html = "";
   for (var i = 0; i < engines.length; i++) {
     var eng = engines[i];
-    var ti = typeInfo[getType(eng)];
+    var count = 0;
+    for (var j = 0; j < parts.length; j++) { if (parts[j].e === eng) count++; }
     var delay = "d" + Math.min(i, 4);
     html += '<button onclick="setFilter(\'' + eng + '\')" class="reveal ' + delay + '" style="background:#111;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:1.5rem;text-align:center;cursor:pointer;transition:all 0.3s;text-decoration:none;color:inherit;font-family:inherit" onmouseover="this.style.borderColor=\'rgba(199,163,104,0.3)\';this.style.background=\'#1A1A1A\';this.style.transform=\'translateY(-4px)\'" onmouseout="this.style.borderColor=\'rgba(255,255,255,0.08)\';this.style.background=\'#111\';this.style.transform=\'translateY(0)\'">';
-    html += '<div style="width:48px;height:48px;margin:0 auto 1rem;border-radius:12px;background:' + ti.bg + ';display:flex;align-items:center;justify-content:center"><iconify-icon icon="' + icons[eng] + '" style="font-size:24px;color:' + ti.color + '"></iconify-icon></div>';
+    html += '<div style="width:48px;height:48px;margin:0 auto 1rem;border-radius:12px;background:rgba(234,179,8,0.1);display:flex;align-items:center;justify-content:center"><iconify-icon icon="' + icons[eng] + '" style="font-size:24px;color:#eab308"></iconify-icon></div>';
     html += '<div style="font-family:Manrope,sans-serif;font-weight:700;font-size:1.125rem;color:white">' + eng + '</div>';
-    html += '<span class="badge ' + ti.cls + '" style="margin-top:0.5rem">' + ti.label + '</span>';
+    html += '<span class="badge badge-d" style="margin-top:0.5rem">Diesel</span>';
+    html += '<div style="font-size:11px;color:#737373;margin-top:0.5rem">' + count + ' piezas</div>';
     html += '</button>';
   }
   grid.innerHTML = html;
@@ -418,21 +365,14 @@ function buildFilters() {
   container.innerHTML = html;
 }
 
-function buildPickup() {
-  var list = document.getElementById("pickupList");
-  var items = [];
-  for (var i = 0; i < parts.length; i++) {
-    if (parts[i].e === "PICKUP") items.push(parts[i]);
-  }
-  var html = "";
-  for (var i = 0; i < items.length; i++) {
-    var x = items[i];
-    html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem;border-radius:8px;background:#111;border:1px solid rgba(255,255,255,0.08);transition:border-color 0.2s" onmouseover="this.style.borderColor=\'rgba(199,163,104,0.3)\'" onmouseout="this.style.borderColor=\'rgba(255,255,255,0.08)\'">';
-    html += '<span style="font-size:14px;color:#d4d4d4">' + x.n + '</span>';
-    html += '<span style="color:#C7A368;font-family:Manrope,sans-serif;font-weight:700;font-size:14px">$' + x.p.toFixed(2) + '</span>';
-    html += '</div>';
-  }
-  list.innerHTML = html;
+function stockClass(val) {
+  if (val >= 100) return "stock-ok";
+  if (val >= 30) return "stock-low";
+  return "";
+}
+
+function stockLabel(val) {
+  return val.toLocaleString() + " uds";
 }
 
 function renderParts() {
@@ -446,7 +386,7 @@ function renderParts() {
     if (currentFilter !== "ALL" && parts[i].e !== currentFilter) ok = false;
     if (currentSearch) {
       var q = currentSearch.toLowerCase();
-      if (parts[i].n.toLowerCase().indexOf(q) === -1 && parts[i].e.toLowerCase().indexOf(q) === -1) ok = false;
+      if (parts[i].n.toLowerCase().indexOf(q) === -1 && parts[i].e.toLowerCase().indexOf(q) === -1 && parts[i].c.toLowerCase().indexOf(q) === -1) ok = false;
     }
     if (ok) filtered.push(parts[i]);
   }
@@ -463,20 +403,32 @@ function renderParts() {
   var html = "";
   for (var i = 0; i < filtered.length; i++) {
     var x = filtered[i];
-    var ti = typeInfo[x.t];
-    var msg = encodeURIComponent("Hola, estoy interesado en:\n- " + x.e + " — " + x.n + "\n- Precio: $" + x.p.toFixed(2) + " USD\n\nEsta disponible?");
+    var msg = encodeURIComponent("Hola, estoy interesado en:\n- " + x.e + "\n- Codigo: " + x.c + "\n- " + x.n + "\n- Precio: $" + x.p.toFixed(2) + " USD\n- Stock: " + x.s + " uds\n\nEsta disponible?");
+
     html += '<div class="card" style="animation:slideIn 0.4s ' + (i * 0.03) + 's both">';
-    html += '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.75rem;margin-bottom:0.75rem">';
+
+    html += '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.75rem;margin-bottom:0.5rem">';
     html += '<div style="display:flex;align-items:center;gap:0.625rem">';
-    html += '<div style="width:36px;height:36px;border-radius:8px;background:' + ti.bg + ';display:flex;align-items:center;justify-content:center;flex-shrink:0"><iconify-icon icon="' + icons[x.e] + '" style="font-size:18px;color:' + ti.color + '"></iconify-icon></div>';
-    html += '<div><span style="font-family:Manrope,sans-serif;font-weight:700;font-size:12px;color:white;letter-spacing:0.03em">' + x.e + '</span><div style="margin-top:2px"><span class="badge ' + ti.cls + '" style="font-size:0.55rem;padding:0.1rem 0.4rem">' + ti.label + '</span></div></div>';
+    html += '<div style="width:36px;height:36px;border-radius:8px;background:rgba(234,179,8,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0"><iconify-icon icon="mdi:engine" style="font-size:18px;color:#eab308"></iconify-icon></div>';
+    html += '<div><span style="font-family:Manrope,sans-serif;font-weight:700;font-size:12px;color:white;letter-spacing:0.03em">' + x.e + '</span>';
+    html += '<div style="margin-top:2px"><span class="badge badge-d" style="font-size:0.55rem;padding:0.1rem 0.4rem">Diesel</span></div></div>';
     html += '</div>';
-    html += '<div style="text-align:right;flex-shrink:0"><span style="font-family:Manrope,sans-serif;font-weight:700;color:#C7A368;font-size:1.125rem">$' + x.p.toFixed(2) + '</span><div style="font-size:10px;color:#525252;text-transform:uppercase;letter-spacing:0.1em">USD</div></div>';
+    html += '<div style="text-align:right;flex-shrink:0"><span style="font-family:Manrope,sans-serif;font-weight:700;color:#C7A368;font-size:1.25rem">$' + x.p.toFixed(2) + '</span><div style="font-size:10px;color:#525252;text-transform:uppercase;letter-spacing:0.1em">USD</div></div>';
     html += '</div>';
-    html += '<p style="font-size:14px;color:#d4d4d4;line-height:1.6;margin:0 0 1rem 0 0 0;padding-left:2.875rem">' + x.n + '</p>';
+
+    html += '<div style="margin-bottom:0.5rem;padding-left:2.875rem"><span class="code-tag">' + x.c + '</span></div>';
+
+    html += '<p style="font-size:14px;color:#d4d4d4;line-height:1.6;margin:0 0 0.5rem 0;padding-left:2.875rem">' + x.n + '</p>';
+
+    html += '<div style="display:flex;align-items:center;gap:0.75rem;padding-left:2.875rem;margin-bottom:0.75rem">';
+    html += '<div style="display:flex;align-items:center;gap:0.375rem"><iconify-icon icon="mdi:package-variant" style="font-size:14px;color:#525252"></iconify-icon><span class="' + stockClass(x.s) + '" style="font-size:12px;font-weight:500">' + stockLabel(x.s) + '</span></div>';
+    html += '<div style="display:flex;align-items:center;gap:0.375rem"><iconify-icon icon="mdi:tag-outline" style="font-size:14px;color:#525252"></iconify-icon><span style="font-size:12px;color:#737373">' + x.u + '</span></div>';
+    html += '</div>';
+
     html += '<div style="display:flex;align-items:center;gap:0.5rem;padding-left:2.875rem">';
     html += '<a href="https://wa.me/5352643984?text=' + msg + '" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.375rem;background:rgba(37,211,102,0.1);color:#4ade80;font-size:12px;font-weight:500;padding:0.5rem;border-radius:8px;text-decoration:none;border:1px solid rgba(37,211,102,0.2);transition:all 0.2s" onmouseover="this.style.background=\'rgba(37,211,102,0.2)\'" onmouseout="this.style.background=\'rgba(37,211,102,0.1)\'"><iconify-icon icon="mdi:whatsapp" style="font-size:14px"></iconify-icon>Pedir</a>';
     html += '</div>';
+
     html += '</div>';
   }
   grid.innerHTML = html;
@@ -508,7 +460,6 @@ function showToast(msg) {
   setTimeout(function(){ t.classList.remove("show"); }, 2500);
 }
 
-// Mobile menu
 var mobOpen = false;
 document.getElementById("burger").addEventListener("click", function() {
   mobOpen = !mobOpen;
@@ -521,7 +472,6 @@ function closeMob() {
   document.getElementById("burger-icon").setAttribute("icon", "mdi:menu");
 }
 
-// Scroll reveal
 var revObs = new IntersectionObserver(function(entries) {
   for (var i = 0; i < entries.length; i++) {
     if (entries[i].isIntersecting) entries[i].target.classList.add("show");
@@ -530,7 +480,6 @@ var revObs = new IntersectionObserver(function(entries) {
 var revEls = document.querySelectorAll(".reveal");
 for (var i = 0; i < revEls.length; i++) revObs.observe(revEls[i]);
 
-// Counter animation
 var cntObs = new IntersectionObserver(function(entries) {
   for (var i = 0; i < entries.length; i++) {
     if (entries[i].isIntersecting) {
@@ -541,7 +490,7 @@ var cntObs = new IntersectionObserver(function(entries) {
           var start = performance.now();
           function tick(now) {
             var p = Math.min((now - start) / 1500, 1);
-            el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
+            el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target).toLocaleString();
             if (p < 1) requestAnimationFrame(tick);
           }
           requestAnimationFrame(tick);
@@ -554,7 +503,6 @@ var cntObs = new IntersectionObserver(function(entries) {
 var numEls = document.querySelectorAll(".snum");
 for (var i = 0; i < numEls.length; i++) cntObs.observe(numEls[i]);
 
-// Navbar scroll
 window.addEventListener("scroll", function() {
   var nav = document.getElementById("nav");
   if (window.scrollY > 100) {
@@ -564,10 +512,8 @@ window.addEventListener("scroll", function() {
   }
 });
 
-// Init
 buildEngines();
 buildFilters();
-buildPickup();
 renderParts();
 </script>
 
